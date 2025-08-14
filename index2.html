@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish for My Kittiya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+   
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <div class="petals" id="petalsContainer"></div>
+    
+    
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress" id="progressBar"></div>
+        </div>
+
+        <!-- Step 1: Greeting -->
+        <div class="step" id="step1">
+            <h1>세상에서 가장 사랑하는 당신, 생일 축하해요</h1>
+            <p>나도 이걸 만들려고 열심히 노력했어.
+                네가 마음에 들어할지는 모르겠지만,
+                적어도 한 번은 봐주고 읽어줬으면 해.</p>
+            
+            <img src="/S__9920514.jpg" style="height: 200px;width: 200px;" alt="">
+            <button class="btn" onclick="nextStep()">선물을 열어보세요</button>
+        </div>
+
+        <!-- Step 2: Name Input -->
+        <div class="step" id="step2">
+            <h2>โปรดใส่ชื่อคนสวยที่สุดในโลกด้วยครับ</h2>
+            <p>คงไม่ต้องบอกหรอกมั้งว่าต้องพิมพ์ชื่อใคร วันเกิดใครก็คนนั้นเลยจ้าที่รัก</p>
+            <input type="text" class="name-input" id="nameInput" placeholder="Enter your name">
+            <button class="btn" onclick="saveName()">Continue</button>
+        </div>
+
+        <!-- Step 3: Heart Animation -->
+        <div class="step" id="step3">
+            <h2>사랑하는 당신에게 <span id="displayName">My Love</span></h2>
+            <p>แตะหัวใจดูดิ รักมากขนาดไหนก็แตะเยอะๆ</p>
+            <div class="heart" id="interactiveHeart" onclick="createHearts()"></div>
+            <div id="heartMessage" class="message-box">
+                <p>มาถึงตรงนี้แล้วก็ขอบคุณมากๆนะที่ยังอยู่ด้วยกัน รักเธอมากนะ อยากให้เธอรู้สึกพิเศษกับวันนี้นะ อยากให้เป็นวันเกิดที่ดีที่สุดเลย <span id="heartName">my love</span>.</p>
+            </div>
+            <button class="btn" onclick="nextStep()">Continue to Your Message</button>
+        </div>
+
+        <!-- Step 4: Birthday Message -->
+        <div class="step" id="step4">
+            <h2>사랑하는 당신에게</h2>
+            <p>เอาหน้าหล่อๆไปดูกับประโยคหวานๆนะจ๊ะเตงบี๋</p>
+            <div class="photo-frame">
+                <!-- Replace with your image path -->
+                <img src="/LINE_ALBUM_เดททึบ_250814_3.jpg" alt="Beautiful You">
+            </div>
+            <div id="typedMessage" class="message-box">
+                <p class="typing-effect" id="typingText"></p>
+            </div>
+            <button class="btn" onclick="nextStep()">See Your Surprise</button>
+        </div>
+
+        <!-- Step 5: Memory Lane -->
+        <div class="step" id="step5">
+            <h2>Our Special Moments</h2>
+            <p>Some memories I'll cherish forever...</p>
+            <div class="memory-container">
+                <div class="polaroid">
+                    <img src="/LINE_ALBUM_เดททึบ_250814_1.jpg" alt="Memory 1">
+                    <div class="polaroid-caption"></div>
+                </div>
+                <div class="polaroid">
+                    <img src="/LINE_ALBUM_1252568 BE_250814_1.jpg" alt="Memory 2">
+                    <div class="polaroid-caption"></div>
+                </div>
+                
+                
+               
+            </div>
+            <button class="btn" onclick="nextStep()">Your Final Surprise</button>
+        </div>
+
+        <!-- Step 6: Final Wish -->
+        <div class="step" id="step6">
+            <h1> 사랑하는 나의 전부, 생일 축하해요 <span id="finalName">My Love </span>! </h1>
+        
+            <p> สุขสันต์วันเกิดโตขึ้นอีกปีแล้วนะ ยิ้มเยอะๆเข้าใจไหม อยากจะขอให้สุขภาพแข็งแรงจริงๆ
+                เพราะเราจะได้มีชีวิตอยุ่ด้วยกันไปนานๆ อยากจะไปเที่ยวด้วยกันอีกเยอะๆ ไปกินของอร่อยด้วยกันอีกหลายๆอย่าง
+                รอฟังเพลงที่ยังไม่เคยฟังด้วยกัน ไปคอนด้วยกันอีกหลายๆที่ ได้พบเจอได้รู้จักได้ชอบได้เกลียดได้เรียนรู้อะไรด้วยกันต่างๆ
+                อีกมายมาย โตขึ้นไปด้วยกัน ค่อยๆเรียนรู้กันและกัน ที่ผ่านมาถ้าเค้าทำอะไรให้เธอรู้สึกไม่พอใจไม่ชอบ เค้าจะพยายามปรับตัว
+                ให้ดีขึ้นอยากจะพยายามเพื่อเธอมากขึ้น อยากให้เธอรู้สึกโชคดีที่มีเค้า อยากมีเธออยู่ด้วยไปนานๆ เค้ารักเธอมากนะ
+                ได้โปรดอยู่กับเค้านะ
+            </p>
+            
+
+            <iframe data-testid="embed-iframe" style="border-radius:12px" 
+            src="https://open.spotify.com/embed/track/3Dkvp3L4w0uJFYfIPa8E9H?utm_source=generator" 
+            width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        
+            <div class="signature">แด่ ผู้อันเป็นที่รักที่สุดของฉันในโลกใบนี้ </div>
+        
+            
+        </div>
+        
+    </div>
+  <script src="script.js"></script>
+</body>
+</html>
